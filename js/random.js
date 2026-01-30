@@ -1,0 +1,1 @@
+var posts=["2026/01/29/gray-blue-green-deployment-strategy/","2026/01/29/IO-redirection/","2026/01/29/folder-operate/","2026/01/29/standard-io/"];function toRandomPost(){window.open('/'+posts[Math.floor(Math.random() * posts.length)],"_self");};
