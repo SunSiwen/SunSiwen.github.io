@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -161,6 +161,371 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://sunsiven.github.io/2026/01/29/IO-redirection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Siwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun Siwen's Blog">
+      <meta itemprop="description" content="分享技术知识、编程经验和学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Sun Siwen's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/01/29/IO-redirection/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-30 12:35:34 / 修改时间：12:33:06" itemprop="dateCreated datePublished" datetime="2026-01-30T12:35:34+08:00">2026-01-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="Linux中的I-O重定向"><a href="#Linux中的I-O重定向" class="headerlink" title="Linux中的I&#x2F;O重定向"></a>Linux中的I&#x2F;O重定向</h3><p>在Linux中，I&#x2F;O重定向是一种将输入输出从默认位置重定向到其他文件或设备的方法。I&#x2F;O重定向可以分为标准输出和错误重定向以及标准输入重定向。</p>
+<h3 id="第一部分：标准输出和错误重定向"><a href="#第一部分：标准输出和错误重定向" class="headerlink" title="第一部分：标准输出和错误重定向"></a>第一部分：标准输出和错误重定向</h3><h4 id="标准输出重定向"><a href="#标准输出重定向" class="headerlink" title="标准输出重定向"></a>标准输出重定向</h4><p>标准输出（stdout）默认输出到终端（屏幕），其文件描述符是1。可以将标准输出重定向到文件或其他设备。</p>
+<h5 id="重定向标准输出到文件"><a href="#重定向标准输出到文件" class="headerlink" title="重定向标准输出到文件"></a>重定向标准输出到文件</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &gt; output_file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello, World!&quot;</span> &gt; hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>这会将 “Hello, World!” 写入 <code>hello.txt</code> 文件。如果文件存在，它将被覆盖。</p>
+<h5 id="追加标准输出到文件"><a href="#追加标准输出到文件" class="headerlink" title="追加标准输出到文件"></a>追加标准输出到文件</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &gt;&gt; output_file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello, Again!&quot;</span> &gt;&gt; hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>这会将 “Hello, Again!” 追加到 <code>hello.txt</code> 文件的末尾。</p>
+<h4 id="标准错误重定向"><a href="#标准错误重定向" class="headerlink" title="标准错误重定向"></a>标准错误重定向</h4><p>标准错误（stderr）默认输出到终端（屏幕），其文件描述符是2。可以将标准错误重定向到文件或其他设备。</p>
+<h5 id="重定向标准错误到文件"><a href="#重定向标准错误到文件" class="headerlink" title="重定向标准错误到文件"></a>重定向标准错误到文件</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> 2&gt; error_file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> non_existent_file 2&gt; error.txt</span><br></pre></td></tr></table></figure>
+
+<p>这会将错误信息写入 <code>error.txt</code> 文件。</p>
+<h5 id="追加标准错误到文件"><a href="#追加标准错误到文件" class="headerlink" title="追加标准错误到文件"></a>追加标准错误到文件</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> 2&gt;&gt; error_file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> non_existent_file 2&gt;&gt; error.txt</span><br></pre></td></tr></table></figure>
+
+<p>这会将错误信息追加到 <code>error.txt</code> 文件的末尾。</p>
+<h4 id="同时重定向标准输出和标准错误"><a href="#同时重定向标准输出和标准错误" class="headerlink" title="同时重定向标准输出和标准错误"></a>同时重定向标准输出和标准错误</h4><p>可以将标准输出和标准错误同时重定向到同一个文件。</p>
+<h5 id="使用-重定向标准输出和标准错误（Bash专用）"><a href="#使用-重定向标准输出和标准错误（Bash专用）" class="headerlink" title="使用 &amp;&gt; 重定向标准输出和标准错误（Bash专用）"></a>使用 <code>&amp;&gt;</code> 重定向标准输出和标准错误（Bash专用）</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &amp;&gt; output_and_error_file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> non_existent_file &amp;&gt; all_output.txt</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用-和-2-1-重定向标准输出和标准错误"><a href="#使用-和-2-1-重定向标准输出和标准错误" class="headerlink" title="使用 &gt; 和 2&gt;&amp;1 重定向标准输出和标准错误"></a>使用 <code>&gt;</code> 和 <code>2&gt;&amp;1</code> 重定向标准输出和标准错误</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &gt; output_file 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> non_existent_file &gt; all_output.txt 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>这会将标准输出和标准错误都重定向到 <code>all_output.txt</code> 文件。</p>
+<h3 id="第二部分：标准输入重定向"><a href="#第二部分：标准输入重定向" class="headerlink" title="第二部分：标准输入重定向"></a>第二部分：标准输入重定向</h3><h4 id="标准输入重定向"><a href="#标准输入重定向" class="headerlink" title="标准输入重定向"></a>标准输入重定向</h4><p>标准输入（stdin）默认从终端（键盘）读取，其文件描述符是0。可以将标准输入重定向从文件或其他输入源读取。</p>
+<h5 id="重定向标准输入从文件"><a href="#重定向标准输入从文件" class="headerlink" title="重定向标准输入从文件"></a>重定向标准输入从文件</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &lt; input_file</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span> &lt; unsorted_list.txt</span><br></pre></td></tr></table></figure>
+
+<p>这会将 <code>unsorted_list.txt</code> 文件的内容作为 <code>sort</code> 命令的输入。</p>
+<h3 id="tr-命令和标准输入重定向"><a href="#tr-命令和标准输入重定向" class="headerlink" title="tr 命令和标准输入重定向"></a><code>tr</code> 命令和标准输入重定向</h3><p><code>tr</code> 是一个用于字符转换和删除的命令，常用于文本处理。它从标准输入读取数据，将其转换或删除后输出到标准输出。</p>
+<h4 id="使用-tr-命令转换字符"><a href="#使用-tr-命令转换字符" class="headerlink" title="使用 tr 命令转换字符"></a>使用 <code>tr</code> 命令转换字符</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello world&quot;</span> | <span class="built_in">tr</span> <span class="string">&#x27;a-z&#x27;</span> <span class="string">&#x27;A-Z&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HELLO WORLD</span><br></pre></td></tr></table></figure>
+
+<h4 id="从文件中读取并转换字符"><a href="#从文件中读取并转换字符" class="headerlink" title="从文件中读取并转换字符"></a>从文件中读取并转换字符</h4><p>假设有一个文件 <code>input.txt</code>，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello world</span><br></pre></td></tr></table></figure>
+
+<p>使用 <code>tr</code> 将小写字母转换为大写：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tr</span> <span class="string">&#x27;a-z&#x27;</span> <span class="string">&#x27;A-Z&#x27;</span> &lt; input.txt</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HELLO WORLD</span><br></pre></td></tr></table></figure>
+
+<h3 id="多行输入重定向"><a href="#多行输入重定向" class="headerlink" title="多行输入重定向"></a>多行输入重定向</h3><p>可以使用多个方法将多行文本输入重定向给命令。</p>
+<h4 id="Here-Document"><a href="#Here-Document" class="headerlink" title="Here Document (&lt;&lt;)"></a>Here Document (<code>&lt;&lt;</code>)</h4><p><code>Here Document</code> 用于将多个行输入作为标准输入传递给命令。语法如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &lt;&lt; <span class="string">delimiter</span></span><br><span class="line"><span class="string">line1</span></span><br><span class="line"><span class="string">line2</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="string">delimiter</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tr</span> <span class="string">&#x27;a-z&#x27;</span> <span class="string">&#x27;A-Z&#x27;</span> &lt;&lt; <span class="string">EOF</span></span><br><span class="line"><span class="string">hello</span></span><br><span class="line"><span class="string">world</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HELLO</span><br><span class="line">WORLD</span><br></pre></td></tr></table></figure>
+
+<h4 id="Here-String"><a href="#Here-String" class="headerlink" title="Here String (&lt;&lt;&lt;)"></a>Here String (<code>&lt;&lt;&lt;</code>)</h4><p><code>Here String</code> 是用于将单个字符串作为标准输入传递给命令。语法如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> &lt;&lt;&lt; <span class="string">&quot;string&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tr</span> <span class="string">&#x27;a-z&#x27;</span> <span class="string">&#x27;A-Z&#x27;</span> &lt;&lt;&lt; <span class="string">&quot;hello world&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HELLO WORLD</span><br></pre></td></tr></table></figure>
+
+<h3 id="组合示例"><a href="#组合示例" class="headerlink" title="组合示例"></a>组合示例</h3><p>假设我们想用 <code>tr</code> 将从文件读取的文本进行字符转换，并将结果输出到另一个文件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">tr</span> <span class="string">&#x27;a-z&#x27;</span> <span class="string">&#x27;A-Z&#x27;</span> &lt; input.txt &gt; output.txt</span><br></pre></td></tr></table></figure>
+
+<p><code>input.txt</code> 的内容将被转换为大写，并写入 <code>output.txt</code>。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>标准输出和错误重定向是将命令的输出或错误信息重定向到文件或其他设备。标准输入重定向是将命令的输入重定向自文件或其他输入源。通过使用重定向符号（<code>&lt;</code>, <code>&gt;</code>, <code>&gt;&gt;</code>, <code>2&gt;</code>, <code>2&gt;&gt;</code>, <code>&amp;&gt;</code> 等），可以灵活地管理命令的输入输出，满足不同的需求。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://sunsiven.github.io/2026/01/29/standard-io/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Siwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun Siwen's Blog">
+      <meta itemprop="description" content="分享技术知识、编程经验和学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Sun Siwen's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/01/29/standard-io/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-30 12:35:34 / 修改时间：12:33:41" itemprop="dateCreated datePublished" datetime="2026-01-30T12:35:34+08:00">2026-01-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在Linux和其他类Unix操作系统中，标准输入、标准输出和标准错误是三种用于进行输入输出操作的标准化流。它们在程序与操作系统之间进行数据交换时起着重要作用。下面是对这三个标准流的详细介绍：</p>
+<h3 id="1-标准输入（Standard-Input，stdin）"><a href="#1-标准输入（Standard-Input，stdin）" class="headerlink" title="1. 标准输入（Standard Input，stdin）"></a>1. 标准输入（Standard Input，stdin）</h3><p>文件描述符：<strong>0</strong></p>
+<ul>
+<li><strong>描述</strong>：标准输入是从用户或其它程序接收输入数据的默认流。通常，它从键盘读取输入。</li>
+<li><strong>默认设备</strong>：键盘。</li>
+<li><strong>用途</strong>：读取用户输入或从其它程序或文件中读取数据。例如，当用户在命令行中输入数据时，程序可以通过标准输入读取这些数据。</li>
+</ul>
+<p><strong>示例代码</strong>（C语言）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> buffer[<span class="number">100</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please enter some text: &quot;</span>);</span><br><span class="line">    fgets(buffer, <span class="number">100</span>, <span class="built_in">stdin</span>); <span class="comment">// 从标准输入读取输入</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;You entered: %s&quot;</span>, buffer);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Shell示例</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;Hello, World!&quot;</span> | ./my_program</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，<code>echo</code>命令的输出被重定向到<code>./my_program</code>的标准输入。</p>
+<h3 id="2-标准输出（Standard-Output，stdout）"><a href="#2-标准输出（Standard-Output，stdout）" class="headerlink" title="2. 标准输出（Standard Output，stdout）"></a>2. 标准输出（Standard Output，stdout）</h3><p>文件描述符：<strong>1</strong></p>
+<ul>
+<li><strong>描述</strong>：标准输出是程序向用户或其它程序输出数据的默认流。通常，它输出到终端屏幕。</li>
+<li><strong>默认设备</strong>：终端（显示器）。</li>
+<li><strong>用途</strong>：显示程序的输出结果。例如，程序的打印信息通常会通过标准输出显示在屏幕上。</li>
+</ul>
+<p><strong>示例代码</strong>（C语言）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello, World!\n&quot;</span>); <span class="comment">// 输出到标准输出</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Shell示例</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./my_program &gt; output.txt</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，<code>./my_program</code>的标准输出被重定向到<code>output.txt</code>文件。</p>
+<h3 id="3-标准错误（Standard-Error，stderr）"><a href="#3-标准错误（Standard-Error，stderr）" class="headerlink" title="3. 标准错误（Standard Error，stderr）"></a>3. 标准错误（Standard Error，stderr）</h3><p>文件描述符：<strong>2</strong></p>
+<ul>
+<li><strong>描述</strong>：标准错误是程序输出错误信息的默认流。通常，它输出到终端屏幕，独立于标准输出。</li>
+<li><strong>默认设备</strong>：终端（显示器）。</li>
+<li><strong>用途</strong>：显示错误信息和诊断消息。例如，当程序遇到错误时，可以通过标准错误输出错误信息，以便用户或系统管理员进行调试和处理。</li>
+</ul>
+<p><strong>示例代码</strong>（C语言）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">&quot;An error occurred!\n&quot;</span>); <span class="comment">// 输出到标准错误</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Shell示例</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./my_program 2&gt; error.txt</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，<code>./my_program</code>的标准错误输出被重定向到<code>error.txt</code>文件。</p>
+<h3 id="重定向和管道"><a href="#重定向和管道" class="headerlink" title="重定向和管道"></a>重定向和管道</h3><ul>
+<li><p><strong>重定向</strong>：重定向是将标准输入、标准输出或标准错误重定向到文件或其它设备。例如：</p>
+<ul>
+<li><code>command &gt; file</code>：将标准输出重定向到文件。</li>
+<li><code>command &lt; file</code>：将文件的内容作为标准输入。</li>
+<li><code>command 2&gt; file</code>：将标准错误重定向到文件。</li>
+</ul>
+</li>
+<li><p><strong>管道</strong>：管道是将一个命令的输出作为另一个命令的输入。例如：</p>
+<ul>
+<li><code>command1 | command2</code>：将<code>command1</code>的标准输出作为<code>command2</code>的标准输入。</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">ls</span> -l &gt; output.txt 2&gt; error.txt</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，<code>ls -l</code>的标准输出被重定向到<code>output.txt</code>，标准错误被重定向到<code>error.txt</code>。</p>
+<p>这些标准流（标准输入、标准输出、标准错误）在Shell编程和系统编程中非常重要，帮助程序员有效地管理和控制数据流。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://sunsiven.github.io/2026/01/29/folder-operate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Siwen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sun Siwen's Blog">
+      <meta itemprop="description" content="分享技术知识、编程经验和学习心得">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Sun Siwen's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/01/29/folder-operate/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-30 12:35:34 / 修改时间：12:34:23" itemprop="dateCreated datePublished" datetime="2026-01-30T12:35:34+08:00">2026-01-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在 Linux 中，有许多命令可以用于文件和目录操作。以下是一些常用的文件和目录操作命令及其详细用法：</p>
+<h3 id="显示目录树"><a href="#显示目录树" class="headerlink" title="显示目录树"></a>显示目录树</h3><h4 id="tree-命令"><a href="#tree-命令" class="headerlink" title="tree 命令"></a><code>tree</code> 命令</h4><p><code>tree</code> 命令用于以树状图的形式显示目录结构。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装tree</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install tree <span class="comment"># Ubuntu/Debian</span></span><br><span class="line"><span class="built_in">sudo</span> yum install tree     <span class="comment"># CentOS/RHEL</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前目录的树状结构</span></span><br><span class="line">tree</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示特定目录的树状结构</span></span><br><span class="line">tree /path/to/directory</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示目录树，并限制显示的层级</span></span><br><span class="line">tree -L 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只显示目录，不显示文件</span></span><br><span class="line">tree -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><h4 id="mkdir-命令"><a href="#mkdir-命令" class="headerlink" title="mkdir 命令"></a><code>mkdir</code> 命令</h4><p><code>mkdir</code> 命令用于创建新目录。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个新目录</span></span><br><span class="line"><span class="built_in">mkdir</span> new_directory</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归创建多级目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /path/to/new_directory</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除空目录"><a href="#删除空目录" class="headerlink" title="删除空目录"></a>删除空目录</h3><h4 id="rmdir-命令"><a href="#rmdir-命令" class="headerlink" title="rmdir 命令"></a><code>rmdir</code> 命令</h4><p><code>rmdir</code> 命令用于删除空目录。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除一个空目录</span></span><br><span class="line"><span class="built_in">rmdir</span> empty_directory</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归删除多级空目录</span></span><br><span class="line"><span class="built_in">rmdir</span> -p /path/to/empty_directory</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除非空目录"><a href="#删除非空目录" class="headerlink" title="删除非空目录"></a>删除非空目录</h3><h4 id="rm-命令"><a href="#rm-命令" class="headerlink" title="rm 命令"></a><code>rm</code> 命令</h4><p><code>rm</code> 命令用于删除文件和目录。之前已经聊过了，这里复习一下。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除一个文件</span></span><br><span class="line"><span class="built_in">rm</span> file.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除一个空目录</span></span><br><span class="line"><span class="built_in">rm</span> -d empty_directory</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归删除一个非空目录及其内容</span></span><br><span class="line"><span class="built_in">rm</span> -r non_empty_directory</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制删除一个非空目录及其内容，不提示确认</span></span><br><span class="line"><span class="built_in">rm</span> -rf non_empty_directory</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="查找文件和目录"><a href="#查找文件和目录" class="headerlink" title="查找文件和目录"></a>查找文件和目录</h3><h4 id="find-命令"><a href="#find-命令" class="headerlink" title="find 命令"></a><code>find</code> 命令</h4><p><code>find</code> 命令用于在目录中查找文件和目录。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在当前目录及其子目录中查找文件</span></span><br><span class="line">find . -name <span class="string">&quot;filename&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在指定目录及其子目录中查找文件</span></span><br><span class="line">find /path/to/directory -name <span class="string">&quot;filename&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找比指定大小大的文件</span></span><br><span class="line">find /path/to/directory -size +100M</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按照文件类型查找（d表示目录，f表示文件）</span></span><br><span class="line">find /path/to/directory -<span class="built_in">type</span> d -name <span class="string">&quot;dirname&quot;</span></span><br><span class="line">find /path/to/directory -<span class="built_in">type</span> f -name <span class="string">&quot;filename&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这些命令涵盖了大多数常见的文件和目录操作。通过熟练掌握这些命令，你可以高效地管理 Linux 文件系统。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
